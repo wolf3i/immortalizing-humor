@@ -2,27 +2,13 @@
 pragma solidity ^0.8.0;
 
 contract Humor {
-    event QuoteImmortalized(
-        string quote,
-        address indexed addressAuthor,
-        string author,
-        string info
-    );
+    event QuoteImmortalized(string quote, address indexed addressAuthor, string author, string info);
 
     event AuthorAddressUpdated(
-        string quote,
-        address indexed addressAuthor,
-        string author,
-        string info,
-        address indexed oldAddressAuthor
+        string quote, address indexed addressAuthor, string author, string info, address indexed oldAddressAuthor
     );
 
-    event InfoUpdated(
-        string quote,
-        address indexed addressAuthor,
-        string author,
-        string info
-    );
+    event InfoUpdated(string quote, address indexed addressAuthor, string author, string info);
 
     string public quote = "Humor is an art and an/my armor";
     address public addressAuthor;
@@ -38,13 +24,7 @@ contract Humor {
     function updateAuthorAddress(address newAddress) public {
         require(msg.sender == addressAuthor, "You are not the author");
         addressAuthor = newAddress;
-        emit AuthorAddressUpdated(
-            quote,
-            addressAuthor,
-            author,
-            info,
-            msg.sender
-        );
+        emit AuthorAddressUpdated(quote, addressAuthor, author, info, msg.sender);
     }
 
     function updateInfo(string calldata newInfo) public {
