@@ -1,3 +1,8 @@
+"Humor is an art and an/my armor" - This insight struck me in a dream while I was in Innsbruck for the 2023/2024 New Year's celebration. It encapsulates how I use humor as a shield to guard against emotional turmoil. - this is a little project of mine to use the Ethereum Project as proof of me being the first person to come up with this quote :)
+
+
+Here are the details about the deployment:
+
 $ forge script script/DeployHumorMainnet.s.sol --rpc-url $MAINNET_RPC_URL --broadcast --etherscan-api-key $ETHERSCAN_API_KEY --verify --account defaultKey --sender 0xe8df60a93b2b328397a8cbf73f0d732aaa11e33d
 [⠊] Compiling...
 [⠃] Compiling 1 files with Solc 0.8.26
