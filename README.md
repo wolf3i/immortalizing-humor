@@ -2,6 +2,8 @@
 
 Small Foundry project for deploying the `Humor` contract, which stores a quote, its attributed author, and editable contextual information on-chain.
 
+"Humor is an art and an/my armor" - This insight struck me in a dream while I was in Innsbruck for the 2023/2024 New Year's celebration. It encapsulates how I use humor as a shield to guard against emotional turmoil. - this is a little project of mine to use the Ethereum Project as proof of me being the first person to come up with this quote :)
+
 ## Contract
 
 `src/Humor.sol` exposes:
