@@ -1,18 +1,20 @@
-# Compiler files
+# Foundry compiler outputs and local caches
 cache/
 out/
 
-# Broadcast files
+# Foundry broadcast logs and deployment artifacts
 broadcast/
 
 # Docs
 docs/
 
-# Dotenv file
+# Local secrets
 .env
+.env.*
+!.env.example
 
-# hardhatnode_modules folder
+# Node dependencies
 node_modules
 
-# hardhat artifacts folder
+# Hardhat artifacts
 artifacts

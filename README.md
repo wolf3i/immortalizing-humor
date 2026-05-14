@@ -1,3 +1,77 @@
+# immortalizing-humor-wolf3i
+
+Small Foundry project for deploying the `Humor` contract, which stores a quote, its attributed author, and editable contextual information on-chain.
+
+## Contract
+
+`src/Humor.sol` exposes:
+
+- `quote()` returning the fixed quote text
+- `author()` returning the author name
+- `addressAuthor()` returning the current controlling address
+- `info()` returning the current descriptive note
+- `updateAuthorAddress(address)` restricted to the current author address
+- `updateInfo(string)` restricted to the current author address
+
+## Project Layout
+
+- `src/` contract source
+- `script/` Foundry deployment scripts for mainnet and Sepolia
+- `test/` Foundry tests
+- `lib/forge-std/` pinned upstream Foundry standard library submodule
+
+## Prerequisites
+
+- Foundry installed: https://book.getfoundry.sh/getting-started/installation
+- A funded deployment account configured locally if you intend to broadcast
+- RPC URLs and an Etherscan API key exported in your shell or loaded from a local `.env`
+
+## Build And Test
+
+```sh
+forge build
+forge test
+```
+
+## Deploy
+
+Sepolia:
+
+```sh
+forge script script/DeployHumorSepolia.s.sol \
+	--rpc-url "$SEPOLIA_RPC_URL" \
+	--broadcast \
+	--etherscan-api-key "$ETHERSCAN_API_KEY" \
+	--verify \
+	--account defaultKey \
+	--sender "$DEPLOYER_ADDRESS"
+```
+
+Mainnet:
+
+```sh
+forge script script/DeployHumorMainnet.s.sol \
+	--rpc-url "$MAINNET_RPC_URL" \
+	--broadcast \
+	--etherscan-api-key "$ETHERSCAN_API_KEY" \
+	--verify \
+	--account defaultKey \
+	--sender "$DEPLOYER_ADDRESS"
+```
+
+Replace `defaultKey` and `$DEPLOYER_ADDRESS` with the account configuration you actually use locally.
+
+## Generated Artifacts
+
+Foundry writes local build and deployment outputs under `cache/`, `out/`, and `broadcast/`. These paths are intentionally gitignored because they may contain machine-specific data, transaction metadata, or sensitive local configuration.
+
+## License
+
+This repository is licensed under the MIT License. See `LICENSE`.
+
+
+## Deployment detials
+
 $ forge script script/DeployHumorMainnet.s.sol --rpc-url $MAINNET_RPC_URL --broadcast --etherscan-api-key $ETHERSCAN_API_KEY --verify --account defaultKey --sender 0xe8df60a93b2b328397a8cbf73f0d732aaa11e33d
 [⠊] Compiling...
 [⠃] Compiling 1 files with Solc 0.8.26
